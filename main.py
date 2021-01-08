@@ -62,8 +62,14 @@ def moveSnake(dir):
             lastY = auxLastY
 
 
-def growSnake():
-    snake.insert(0, square.copy())
+def growSnake(ammount = 0):
+    if ammount == 0:
+        size = random.randint(1,5)
+        for i in range(size):
+            snake.insert(0, square.copy())
+    else:
+        for i in range(ammount):
+            snake.insert(0, square.copy())
 
 
 def createFood():
